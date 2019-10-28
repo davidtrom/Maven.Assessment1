@@ -8,6 +8,9 @@ public class Cat extends Pet {
      * @param name name of this Cat
      * @param age age of this Cat
      */
+    //String name = "CatName";
+    //Integer age = 0;
+
 
     public Cat(String name, Integer age) {
         this.name = name;
@@ -18,7 +21,8 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
     public Cat(Integer age) {
-        this.age = age;
+        this.name = "Cat name";
+        this.age = Integer.MAX_VALUE;;
     }
 
     /**
@@ -36,8 +40,11 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
+        this.name = "Cat name";
+        this.age=0;
     }
-//All the above are constructors
+
+    //All the above are constructors
 
     /**
      * @return meow as a string
