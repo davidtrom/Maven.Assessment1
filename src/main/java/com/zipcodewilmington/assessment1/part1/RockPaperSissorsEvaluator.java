@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part1;
 
+import java.awt.*;
+import java.awt.print.Paper;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -7,13 +10,25 @@ public class RockPaperSissorsEvaluator {
     protected static final String ROCK = "rock";
     protected static final String PAPER = "paper";
     protected static final String SCISSOR = "scissor";
+    private String winner;
+    private String loser;
 
     /**
      * @param handSign a string representative of a hand sign
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        //String winner;
+        if (handSign.equals(ROCK)) {
+            winner = PAPER;
+            return winner;
+        } else if (handSign.equals(PAPER)) {
+            winner = SCISSOR;
+            return winner;
+        } else {
+            winner = ROCK;
+            return winner;
+        }
     }
 
     /**
@@ -21,7 +36,17 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        //String loser;
+        if (handSign.equals(ROCK)) {
+            loser = SCISSOR;
+            return loser;
+        } else if (handSign.equals(PAPER)) {
+            loser = ROCK;
+            return loser;
+        } else {
+            loser = PAPER;
+            return loser;
+        }
     }
 
     /**
@@ -30,6 +55,15 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+
+        if (handSignOfPlayer2.equals(getWinningMove(handSignOfPlayer1))) {
+            return handSignOfPlayer2;
+        }
+        else
+        {
+            return handSignOfPlayer1;
+        }
+
     }
 }
+

@@ -10,7 +10,7 @@ public class BasicStringUtils {
      */
     public static String camelCase(String str) {
 
-        String firstLetter = str.substring(0,1).toUpperCase();
+        String firstLetter = str.substring(0, 1).toUpperCase();
         String restOfString = str.substring(1, str.length());
 
         return firstLetter + restOfString;
@@ -48,8 +48,8 @@ public class BasicStringUtils {
 
         StringBuilder sb = new StringBuilder(str);
         int lastLetterIndex = str.length();
-        sb.replace(lastLetterIndex-1, lastLetterIndex, "");
-        sb.replace(0,1,"");
+        sb.replace(lastLetterIndex - 1, lastLetterIndex, "");
+        sb.replace(0, 1, "");
         return sb.toString();
     }
 
@@ -58,12 +58,20 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        char c;
 
-       /* char[] characterArray = str.toCharArray()
-                for (int i=0; i < characterArray.length; i++)
-                    if (characterArray[i]))
-
-        */
-        return null;
+        for (int i = 0; i < str.length(); i++) {
+            c = str.charAt(i);
+            if (Character.isLowerCase(c))
+            {
+                sb.replace(i, i + 1, String.valueOf(Character.toUpperCase(c)));
+            }
+            else
+            {
+                sb.replace(i, i + 1, String.valueOf(Character.toLowerCase(c)));
+            }
+        }
+        return sb.toString();
     }
 }

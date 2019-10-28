@@ -26,7 +26,12 @@ public class IntegerUtils {
      * @return the product of all integers between 0 and not including `n`
      */
     public static Integer getProductOfN(Integer n) {
-        return null;
+        Integer product = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            product = product * i;
+        }
+        return product;
     }
 
     /**
@@ -35,6 +40,13 @@ public class IntegerUtils {
      */
     public static Integer reverseDigits(Integer val) {
 
-        return null;
+        Integer reversedNum = 0;
+       while (val != 0)
+       {
+           reversedNum = reversedNum * 10;
+           reversedNum = reversedNum + (val%10);
+           val = val/10;
+       }
+        return reversedNum;
     }
 }
