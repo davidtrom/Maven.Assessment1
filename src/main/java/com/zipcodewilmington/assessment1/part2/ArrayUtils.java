@@ -4,6 +4,7 @@ package com.zipcodewilmington.assessment1.part2;
 //import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,7 +65,17 @@ public class ArrayUtils {
      */
     public static Object getMostCommon(Object[] objectArray) {
         Map<Integer, Integer> myMap = new HashMap<>();
-        return null;
+        Integer counter=0;
+        Integer placeHolder=0;
+        Arrays.sort((objectArray));
+        for (int i = 0; i < objectArray.length; i++)
+        {
+         if (objectArray[i]==objectArray[i+1])
+         {
+             counter++;
+         }
+        }
+            return null;
     }
 
 
