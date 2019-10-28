@@ -33,11 +33,13 @@ public class Cat extends Pet {
      */
     public Cat() {
     }
+//All the above are constructors
 
     /**
      * @return meow as a string
      */
     public String speak() {
-        return null;
+
+        return "meow";
     }
 }
