@@ -4,6 +4,8 @@ package com.zipcodewilmington.assessment1.part2;
 //import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by leon on 2/16/18.
@@ -35,23 +37,23 @@ public class ArrayUtils {
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
 
-        ArrayUtils.removeValue(objectArray, objectToRemove);
-      return objectArray;
+       //ArrayUtils.removeValue(objectArray, objectToRemove);
+      //return objectArray;
 
 
 
-//       I couldn't get this to work I was having casting issues because the array in the test is made of Integers
-//       but I think the code is good though.
-//
-//        ArrayList<Object> list = new ArrayList<>();
-//        for (int i = 0; i < objectArray.length; i++ )
-//        {
-//            if(!objectArray[i].equals(objectToRemove))
-//            {
-//                list.add(objectArray[i]);
-//            }
-//        }
-//        return list.toArray();
+        ArrayList<Object> list = new ArrayList<>();
+        for (int i = 0; i < objectArray.length; i++ )
+        {
+            if(!objectArray[i].equals(objectToRemove))
+            {
+                list.add(objectArray[i]);
+            }
+        }
+
+        Integer[] resultArray = new Integer[list.size()];
+        list.toArray(resultArray);
+        return resultArray;
 
 }
 
@@ -61,7 +63,7 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        //Object[] countUp =
+        Map<Integer, Integer> myMap = new HashMap<>();
         return null;
     }
 
@@ -83,7 +85,7 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
 
-        Object[] result = new Object[objectArray.length + objectArrayToAdd.length];
+        Integer[] result = new Integer[objectArray.length + objectArrayToAdd.length];
         System.arraycopy(objectArray, 0, result, 0, objectArray.length);
         System.arraycopy(objectArrayToAdd, 0, result, objectArray.length, objectArrayToAdd.length);
 

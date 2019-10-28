@@ -15,21 +15,15 @@ public class MultiplesDeleter {
     public Integer[] deleteEvens(Integer[] ints) {
 
         ArrayList<Integer> list = new ArrayList<>();
-        //Integer[] result;
 
-
-        for(int i = 0; i<ints.length; i++)
-        {
-            if(ints[i] % 2 ==1)
-            {
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % 2 == 1) {
                 list.add(ints[i]);
             }
         }
-
-        //System.out.println(list);
-        //result = list.toArray();
-        //eturn result;
-            return null; //list.toArray(Integer.class);
+        Integer[] resultArray = new Integer[list.size()];
+        list.toArray(resultArray);
+        return resultArray;
     }
 
     /**
@@ -39,7 +33,17 @@ public class MultiplesDeleter {
      */
     public Integer[] deleteOdds(Integer[] ints) {
 
-        return null;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % 2 == 0) {
+                list.add(ints[i]);
+            }
+        }
+        Integer[] resultArray = new Integer[list.size()];
+        list.toArray(resultArray);
+        return resultArray;
+
     }
 
     /**
@@ -48,7 +52,18 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % 3 == 1) {
+                list.add(ints[i]);
+            }
+        }
+        Integer[] resultArray = new Integer[list.size()];
+        list.toArray(resultArray);
+        return resultArray;
+
     }
 
     /**
@@ -58,6 +73,17 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < ints.length; i++) {
+            if (ints[i] % multiple != 0) {
+                list.add(ints[i]);
+            }
+        }
+        Integer[] resultArray = new Integer[list.size()];
+        list.toArray(resultArray);
+        return resultArray;
+
     }
 }
