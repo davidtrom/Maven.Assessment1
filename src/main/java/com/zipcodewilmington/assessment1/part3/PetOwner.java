@@ -12,7 +12,27 @@ public class PetOwner {
      *
      */
     String name;
-    ArrayList<Pet> pets = new ArrayList<Pet>();
+    private volatile ArrayList<Pet> pets = new ArrayList<>();
+    //private static AnimalWarehouse<Cat> catHouse = new AnimalWarehouse<>();
+
+
+
+
+        public void add(AnimalType animal) {
+            list.add(animal);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public PetOwner(String name, Pet... pets) {
         this.name=name;
@@ -32,6 +52,8 @@ public class PetOwner {
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
+
+            }
 
     }
 
