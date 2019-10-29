@@ -12,40 +12,28 @@ public class PetOwner {
      *
      */
     String name;
-    private volatile ArrayList<Pet> pets = new ArrayList<>();
-    //private static AnimalWarehouse<Cat> catHouse = new AnimalWarehouse<>();
-
-
-
-
-        public void add(AnimalType animal) {
-            list.add(animal);
-        }
-
-
-
-
-
-
-
-
-
-
-
+    Pet[] petList = new Pet [1];
 
 
     public PetOwner(String name, Pet... pets) {
         this.name=name;
-
-
+        this.petList = pets;
+        if(pets != null)
+        {
+            for(Pet pet:pets)
+            {
+                pet.setOwner(this);
+            }
+        }
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-
+        ArrayList<Pet> pets = new ArrayList<>();
         pets.add(pet);
+        petList = pets.toArray(new Pet [pets.size()]);
     }
 
     /**
@@ -55,7 +43,7 @@ public class PetOwner {
 
             }
 
-    }
+
 
     /**
      * @param pet pet to evaluate ownership of
